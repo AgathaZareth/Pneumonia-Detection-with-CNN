@@ -1,0 +1,12 @@
+.DS_store
+.ipynb_checkpoints
+
+__pycache__
+*.pytest_cache
+.gitattributes
+!*.zip
+
+*.db
+*.h5
+
+data/
