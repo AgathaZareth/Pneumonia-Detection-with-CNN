@@ -222,24 +222,71 @@ At this point I need to move forward with selecting a final model. I can chose t
 
 Because the intent of this model is to flag cases of concern, I will go with the higher recall score model, `reduced_nodes`, so that fewer cases are given a false negative label of NORMAL. This may result in increased number of cases prioritized for immediate review from radiologists however, I will capture as many true pneumonia cases as possible which in the end will result in expidited treatment for these patients. 
 
+# Final Model
+For the above mentioned reasons I have chosen my final model to be the `reduced_nodes` model. For the `final_model` I downsampled the pneumonia class to match that of the normal class. This will bring the total number of training images to 2698 with an even split of both classes. I then selected 25 from each class for validation data. 
 
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
+## Architecture
+
+<img src="/images/final_model_arch.png" alt="final_model architecture" />
 
 
+## Summary
 
+<img src="/images/final_model_summary.png" alt="final_model.summary()" />
 
+## Loss and Accuracy across epochs
 
+### Plot
 
+<img src="/images/final_model_la_plot.png" alt="final_model loss and accuacy across epochs plots" />
 
+**NOTES:** The early stopping was triggered after 42 epochs. It took approximately 180 seconds per epoch on this machine. It is clear from the above plots that this model is still slightly over trained (take note of the scale of y axis). Next Steps will discuss options to address this.
 
+### Compare with `compare` df
 
+<img src="/images/compare_with_final.png" alt="each models accuracy and pneumonia recall scores for train and test data" />
+
+**NOTES:** There is still a very high accuracy with both train and test data, ~98.7% and ~91.2% respectively. Additionally, the differences between training and test, loss and accuracy are the lowest in this final model. Remember, this is the `reduce_nodes` model and the only difference is the amount of data that has been used to train the model. 
+
+## Confusion Matrices and Classification Reports
+
+**Train**
+
+<img src="/images/final_train_cm_cr.png" alt="final_model training data confusion matrix and classification report" />
+
+**Test**
+
+<img src="/images/final_test_cm_cr.png" alt="final_model test data confusion matrix and classification report" />
+
+## View misclassified images from testing data
+
+<img src="/images/final_model_misclassified.png" alt="Missclassified images from final models test data" />
+
+## Final evaluation
+
+### `metrics_df` 
+
+<img src="/images/metrics_df_with_final.png" alt="each models train loss, test loss, train accuracy, test accuracy, and the differences between both" />
+
+**NOTES:** From the `compare` df you can see the testing data accuracy scored highest with this model. You can also see in both training and test data pneumonia recall score is the same. This is important because we want to avoid false negatives slipping by without immediate attention called to them. While it is not the highest of all the models it is important they match because we want a reliable model that is outputing similar results on unseen data  as it does on testing data. As noted above, from the `metrics_df` you can see there is still a very high accuracy with both train and test data, ~98.7% and ~91.2% respectively. Additionally, the differences between training and test, loss and accuracy are the lowest in this final model. Remember, this is the `reduce_nodes` model and the only difference is the amount of data that has been used to train the model. This demonstartes the potential for this model to improve with more available data to learn with. 
+
+# Next Steps
+
+While this model has the lowest difference between training and test, loss and accuracy there is still a slight difference. In future iteration, adjusting the lambda coefficient in the l2 regularization may further decrease these differences. An additional method may also be to reduce the kernel nodes even further. 
+
+As we have seen, the more data available to train the model, the better it performs. One option to increase data, while maintaining equal distribution of classes, is instead of down sampling the pneumonia class to match that of the normal class, we can up sample the normal class using data augmentation to match the number of pneumonia cases. This will result in 2534 more "NORMAL" images and increase the total number of training images from 2698 to 7766. 
+
+# Recommendations
+
+My recommendation is that GE Healthcare have built into the CCS machines software the ability to not only flag cases of concern for immediate review, but also have the radiologist confirm the AI's predictions. This collaborative approach gives further opportunities for the model to learn and improve performance, and also provides a direct actionable way to improve clinical outcomes and elevate patient experience. 
+
+An additional recommendation would be to push software updates to existing machines, allowing for example, a machine in a small family practice in Idaho could get updates and improve due to the images being collected from clinics in more densely populated urban locations like San Francisco or New York. 
+
+These recommendations will make these CCS units more marketable to a larger range of businesses and give every doctor’s office around the globe a reason to want this technology for their own practice. The more CCS machines learning from new cases, the better these AI predictions can get. And the better the predictions, the more justification to bring this technology into every medical practice.
+
+# Thank You
+
+Let's work together, 
+- Email: cassigroesbeck@emailplace.com
+- GitHub: [@AgathaZareth](https://github.com/AgathaZareth)
+- LinkedIn: [Cassarra Groesbeck](https://www.linkedin.com/in/cassarra-groesbeck-a64b75229)
