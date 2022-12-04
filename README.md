@@ -147,68 +147,78 @@ Add l2 kernel regularization to `base_cnn` model
 
 ### `reg_cnn.summary()`
 
-<img src="/images/name.png" alt="name.summary()" />
+<img src="/images/reg_cnn_summary.png" alt="reg_cnn.summary()" />
 
 ### Loss and Accuracy across epochs
 
-<img src="/images/name.png" alt="name loss and accuacy across epochs plots" />
+<img src="/images/reg_cnn_la_plot.png" alt="reg_cnn loss and accuacy across epochs plots" />
 
 ### Confusion Matrices and Classification Reports
 
 **Train**
 
-<img src="/images/name.png" alt="name training data confusion matrix and classification report" />
+<img src="/images/reg_cnn_train_cm_cr.png" alt="reg_cnn training data confusion matrix and classification report" />
 
 **Test**
 
-<img src="/images/name.png" alt="name test data confusion matrix and classification report" />
+<img src="/images/reg_cnn_test_cm_cr.png" alt="reg_cnn test data confusion matrix and classification report" />
 
 ## `reduced_nodes`
 Reduce number of nodes in each layer by half
 
 ### `reduced_nodes.summary()`
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/reduced_nodes_summary.png" alt="reduced_nodes.summary()" />
 
 ### Loss and Accuracy across epochs
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/reduced_nodes_la_plot.png" alt="reduced_nodes loss and accuacy across epochs plots" />
 
 ### Confusion Matrices and Classification Reports
 
 **Train**
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/reduced_nodes_train_cm_cr.png" alt="reduced_nodes training data confusion matrix and classification report" />
 
 **Test**
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/reduced_nodes_test_cm_cr.png" alt="reduced_nodes test data confusion matrix and classification report" />
 
 ## `dropout`
 Add dropout to `reduced_nodes` model
 
 ### `dropout.summary()`
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/dropout_summary.png" alt="dropout.summary()" />
 
 ### Loss and Accuracy across epochs
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/dropout_la_plot.png" alt="dropout loss and accuacy across epochs plots" />
 
 ### Confusion Matrices and Classification Reports
 
 **Train**
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/dropout_train_cm_cr.png" alt="dropout training data confusion matrix and classification report" />
 
 **Test**
 
-<img src="/images/name.png" alt="text" />
+<img src="/images/dropout_test_cm_cr.png" alt="dropout test data confusion matrix and classification report" />
 
 
+# Compare the models
 
-<img src="/images/name.png" alt="text" />
-<img src="/images/name.png" alt="text" />
+<img src="/images/compare.png" alt="train and test data for each model, accuracy and pneumonia recall scores" />
+
+<img src="/images/metrics_df.png" alt="each models train loss, test loss, train accuracy, test accuracy, and the differences between both" />
+
+My goal for adding dropout was to close the gap between the training and test loss difference and train and test accuracy difference. The `metrics_df` shows that this `dropout` model did infact reduce that gap from the previous model iteration. However, the `compare` df shows that while the accuracy improved with this `dropout` model, the pneumonia recall score for test data dropped. You can also explore this in greater detail by comparing the confusion matrices and classification reports of the train data from the last two models. 
+
+At this point I need to move forward with selecting a final model. I can chose the higher accuracy `dropout` model, or the higher recall score of `reduced_nodes` model.
+
+Because the intent of this model is to flag cases of concern, I will go with the higher recall score model, `reduced_nodes`, so that fewer cases are given a false negative label of NORMAL. This may result in increased number of cases prioritized for immediate review from radiologists however, I will capture as many true pneumonia cases as possible which in the end will result in expidited treatment for these patients. 
+
+
 <img src="/images/name.png" alt="text" />
 <img src="/images/name.png" alt="text" />
 <img src="/images/name.png" alt="text" />
