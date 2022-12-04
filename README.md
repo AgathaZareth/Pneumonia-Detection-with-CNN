@@ -208,7 +208,11 @@ Add dropout to `reduced_nodes` model
 
 # Compare the models
 
+`compare` df:
+
 <img src="/images/compare.png" alt="train and test data for each model, accuracy and pneumonia recall scores" />
+
+`metrics_df`:
 
 <img src="/images/metrics_df.png" alt="each models train loss, test loss, train accuracy, test accuracy, and the differences between both" />
 
