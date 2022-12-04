@@ -126,7 +126,7 @@ Add convolutional layers to `base_model`
 
 ### `base_cnn.summary()`
 
-<img src="/images/base_cnn_summary.png" alt="base_cnn.summary()" />
+<img src="/images/bass_cnn_summary.png" alt="base_cnn.summary()" />
 
 ### Loss and Accuracy across epochs
 
