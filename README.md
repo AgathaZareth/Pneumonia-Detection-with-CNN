@@ -8,21 +8,20 @@
 
 According to the latest publication from Meticulous Research®, the global X-ray detectors market is expected to register a CAGR of 6% during the forecast period 2022–2029 to reach $4.30 billion by 2029. The growing adoption of digital X-ray detectors, rising demand for X-ray imaging in industrial and security markets, growing geriatric population coupled with rising prevalence of chronic diseases & respiratory infections, and increasing utilization of X-ray detectors for early diagnosis & clinical applications are considered to have a positive impact on the global X-ray detectors market.[[TOP 10 COMPANIES IN X-RAY DETECTORS MARKET]](https://meticulousblog.org/top-10-companies-in-x-ray-detectors-market/)
 
-[GE Healthcare](https://www.gehealthcare.com/insights/article/achieving-greater-connectivity-in-radiology-through-digitization-and-ai) is among the top companies operating in the global digital radiography market.[[Digital Radiography Market Size to Reach USD 19.82 Billion in 2028, Says Reports and Data]](https://www.biospace.com/article/digital-radiography-market-size-to-reach-usd-19-82-billion-in-2028-says-reports-and-data/) GE Healthcare is also leading the way with integration of AI into their imagaing equipment and software.
+[GE Healthcare](https://www.gehealthcare.com/insights/article/achieving-greater-connectivity-in-radiology-through-digitization-and-ai) is among the top companies operating in the global digital radiography market.[[Digital Radiography Market Size to Reach USD 19.82 Billion in 2028, Says Reports and Data]](https://www.biospace.com/article/digital-radiography-market-size-to-reach-usd-19-82-billion-in-2028-says-reports-and-data/) GE Healthcare is also leading the way with integration of AI into their imagaing equipment and software. They currently have on the market a collection of AI algorithms embedded on X-ray systems, Critical Care Suite 2.01 (CCS), for automated measurements, case prioritization, and quality control. This application automatically analyzes images on a GE X-ray system, highlights critical information on chest X-rays, including Endotracheal Tube Positioning, Pneumothorax Triage and Notifications, Quality Care Suite2 AI algorithms that operate in parallel, and help technologists reduce image quality errors and improve efficiency. [[GE Healthcare]](https://apps.gehealthcare.com/app-products/critical-care-suite-2) 
+ 
  
 
 ## Business Understanding
 
-They currently have on the market Critical Care Suite 2.01 (CCS), a collection of AI algorithms embedded on X-ray systems for automated measurements, case prioritization and quality control. The application automatically analyzes images on a GE X-ray system and highlights critical information on chest X-rays including Endotracheal Tube Positioning, Pneumothorax Triage and Notifications, and Quality Care Suite2 AI algorithms that operate in parallel and help technologists reduce image quality errors and improve efficiency. [[GE Healthcare]](https://apps.gehealthcare.com/app-products/critical-care-suite-2) 
+GE Healthcare would like to increase the marketablity of their CCS system by expanding their collection of AI algorithms used when automatically analyzing images. One part of this expanded collection will screen for pneumonia. This will not only help GE Healthcare stay competative as the market grows but it will also increase the functionality of their CCS system. 
 
-GE Healthcare is expanding their collection of AI algorithms used when automatically analyzing images. One part of this expanded collection will screen for pneumonia and flag cases of concern. This will not only help GE Healthcare stay competative as the market grows but it will also increase the functionality of their CCS system. 
-
-GE Healthcare needs a model that can successfully identify pneumonia. 
+GE Healthcare needs a model that can successfully identify pneumonia.  
 
 
 ## Objectives
 
-Build a model that can detect pneumonia to be integrate into GE Healthcare's collection of AI algorithms embedded in the Critical Care Suite 2.01 X-ray systems.
+Build and test a model that can detect pneumonia using chest ex ray images, to be integrate into GE Healthcare's collection of AI algorithms embedded in the Critical Care Suite 2.01 X-ray systems.
 
 
 ## Data Understanding 
@@ -35,6 +34,15 @@ The dataset comes from Kermany et al. on [Mendeley Data](https://data.mendeley.c
 
 
 <img src="/images/first_20_full_data.png" alt="preview of first 20 images in the entire training set" />
+
+## Data used for building models
+
+After unzipping file from [Mendeley Data](https://data.mendeley.com/datasets/rscbjbr9sj/3) there will be a `CellData` folder which contains a `chest_xray` folder. From there you will find the data is divided into a `train` and `test` folders and within these folders the images are seperated into `NORMAL` and `PNEUMONIA` folders. 
+
+<img src="/images/folders.png" alt="folders displayed as list" />
+
+
+My downsampled train set will consist of 500 randomly selected images from this `train` folder, 250 images `NOMAL` and 250 `PNEUMONIA`. I will also create a validation set of images not used in my downsampled train set of 25 `NORMAL` and 25 `PNEUMONIA`.
 
 
 ---
