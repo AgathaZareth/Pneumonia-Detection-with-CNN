@@ -26,7 +26,7 @@ Build and test a model that can detect pneumonia using chest ex ray images, to b
 
 ## Data Understanding 
 
-The dataset comes from Kermany et al. on [Mendeley Data](https://data.mendeley.com/datasets/rscbjbr9sj/3). Images are from University of California San Diego, Guangzhou Women and Children's Medical Center and contains frontal chest X-rays of children and women. This is a large dataset with 5856 total radiographs; 1583 NORMAL and 4273 PNEUMONIA, both bacterial pneumonia and viral pneumonia. 
+The dataset comes from Kermany et al. on [Mendeley Data](https://data.mendeley.com/datasets/rscbjbr9sj/3). Images are from Guangzhou Women and Children's Medical Center and contains frontal chest X-rays of children and women. This is a large dataset with 5856 total radiographs; 1583 NORMAL and 4273 PNEUMONIA, both bacterial pneumonia and viral pneumonia. 
 
 
 ## Exploring the Data
