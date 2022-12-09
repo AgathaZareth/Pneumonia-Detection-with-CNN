@@ -6,9 +6,9 @@
 
 ## Introduction
 
-According to the latest publication from Meticulous Research®, the global X-ray detectors market is expected to register a CAGR of 6% during the forecast period 2022–2029 to reach $4.30 billion by 2029. The growing adoption of digital X-ray detectors, rising demand for X-ray imaging in industrial and security markets, growing geriatric population coupled with rising prevalence of chronic diseases & respiratory infections, and increasing utilization of X-ray detectors for early diagnosis & clinical applications are considered to have a positive impact on the global X-ray detectors market.[[TOP 10 COMPANIES IN X-RAY DETECTORS MARKET]](https://meticulousblog.org/top-10-companies-in-x-ray-detectors-market/)
+According to the latest publication from Meticulous Research®, the global X-ray detectors market is expected to register a CAGR of 6% during the forecast period 2022–2029 to reach $4.30 billion by 2029. The growing adoption of digital X-ray detectors, rising demand for X-ray imaging in industrial and security markets, growing geriatric population coupled with rising prevalence of chronic diseases & respiratory infections, and increasing utilization of X-ray detectors for early diagnosis & clinical applications are considered to have a positive impact on the global X-ray detectors market [[TOP 10 COMPANIES IN X-RAY DETECTORS MARKET]](https://meticulousblog.org/top-10-companies-in-x-ray-detectors-market/).
 
-[GE Healthcare](https://www.gehealthcare.com/insights/article/achieving-greater-connectivity-in-radiology-through-digitization-and-ai) is among the top companies operating in the global digital radiography market.[[Digital Radiography Market Size to Reach USD 19.82 Billion in 2028, Says Reports and Data]](https://www.biospace.com/article/digital-radiography-market-size-to-reach-usd-19-82-billion-in-2028-says-reports-and-data/) GE Healthcare is also leading the way with integration of AI into their imagaing equipment and software. They currently have on the market a collection of AI algorithms embedded on X-ray systems, Critical Care Suite 2.01 (CCS), for automated measurements, case prioritization, and quality control. This application automatically analyzes images on a GE X-ray system, highlights critical information on chest X-rays, including Endotracheal Tube Positioning, Pneumothorax Triage and Notifications, Quality Care Suite2 AI algorithms that operate in parallel, and help technologists reduce image quality errors and improve efficiency. [[GE Healthcare]](https://apps.gehealthcare.com/app-products/critical-care-suite-2) 
+[GE Healthcare](https://www.gehealthcare.com/insights/article/achieving-greater-connectivity-in-radiology-through-digitization-and-ai) is among the top companies operating in the global digital radiography market [[Digital Radiography Market Size to Reach USD 19.82 Billion in 2028, Says Reports and Data]](https://www.biospace.com/article/digital-radiography-market-size-to-reach-usd-19-82-billion-in-2028-says-reports-and-data/). GE Healthcare is also leading the way with integration of AI into their imagaing equipment and software. They currently have on the market a collection of AI algorithms embedded on X-ray systems, Critical Care Suite 2.01 (CCS), for automated measurements, case prioritization, and quality control. This application automatically analyzes images on a GE X-ray system, highlights critical information on chest X-rays, including Endotracheal Tube Positioning, Pneumothorax Triage and Notifications, Quality Care Suite2 AI algorithms that operate in parallel, and help technologists reduce image quality errors and improve efficiency [[GE Healthcare]](https://apps.gehealthcare.com/app-products/critical-care-suite-2).
  
  
 
@@ -87,7 +87,7 @@ accuracy: I am using accuracy because I want a reliable model that does a good j
 
 **MAXIMUM POOLING** 
 
-Calculate the maximum value for each patch of the feature map. The result of using a pooling layer and creating down sampled or pooled feature maps is a summarized version of the features detected in the input. [A Gentle Introduction to Pooling Layers for Convolutional Neural Networks](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)
+Calculate the maximum value for each patch of the feature map. The result of using a pooling layer and creating down sampled or pooled feature maps is a summarized version of the features detected in the input [A Gentle Introduction to Pooling Layers for Convolutional Neural Networks](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/).
 
 **L2 KERNAL REGULARIZATION**
 
@@ -115,17 +115,17 @@ Baseline fully connected model without convolutional layers:
 
 <img src="/images/base_summary.png" alt="base_model.summary()" />
 
-### Loss and Accuracy across epochs
+### `base_model` Loss and Accuracy across epochs
 
 <img src="/images/base_la_plot.png" alt="baseline loss and accuacy across epochs plots" />
 
-### Confusion Matrices and Classification Reports
+### `base_model` Confusion Matrices and Classification Reports
 
-**Train**
+**`base_model` Train**
 
 <img src="/images/base_train_cm_cr.png" alt="baseline training data confusion matrix and classification report" />
 
-**Test**
+**`base_model` Test**
 
 <img src="/images/base_test_cm_cr.png" alt="baseline test data confusion matrix and classification report" />
 
@@ -136,80 +136,80 @@ Add convolutional layers to `base_model`
 
 <img src="/images/bass_cnn_summary.png" alt="base_cnn.summary()" />
 
-### Loss and Accuracy across epochs
+### `base_cnn` Loss and Accuracy across epochs
 
 <img src="/images/base_cnn_la_plot.png" alt="baseline cnn models loss and accuacy across epochs plots" />
 
-### Confusion Matrices and Classification Reports
+### `base_cnn` Confusion Matrices and Classification Reports
 
-**Train**
+**`base_cnn` Train**
 
 <img src="/images/base_cnn_train_cm_cr.png" alt="baseline cnn training data confusion matrix and classification report" />
 
-**Test**
+**`base_cnn` Test**
 
 <img src="/images/base_cnn_test_cm_cr.png" alt="baseline cnn test data confusion matrix and classification report" />
 
-## `reg_cnn`
+## `reg_cnn` 
 Add l2 kernel regularization to `base_cnn` model
 
 ### `reg_cnn.summary()`
 
 <img src="/images/reg_cnn_summary.png" alt="reg_cnn.summary()" />
 
-### Loss and Accuracy across epochs
+### `reg_cnn` Loss and Accuracy across epochs
 
 <img src="/images/reg_cnn_la_plot.png" alt="reg_cnn loss and accuacy across epochs plots" />
 
-### Confusion Matrices and Classification Reports
+### `reg_cnn` Confusion Matrices and Classification Reports
 
-**Train**
+**`reg_cnn` Train**
 
 <img src="/images/reg_cnn_train_cm_cr.png" alt="reg_cnn training data confusion matrix and classification report" />
 
-**Test**
+**`reg_cnn` Test**
 
 <img src="/images/reg_cnn_test_cm_cr.png" alt="reg_cnn test data confusion matrix and classification report" />
 
-## `reduced_nodes`
+## `reduced_nodes` 
 Reduce number of nodes in each layer by half
 
 ### `reduced_nodes.summary()`
 
 <img src="/images/reduced_nodes_summary.png" alt="reduced_nodes.summary()" />
 
-### Loss and Accuracy across epochs
+### `reduced_nodes` Loss and Accuracy across epochs
 
 <img src="/images/reduced_nodes_la_plot.png" alt="reduced_nodes loss and accuacy across epochs plots" />
 
-### Confusion Matrices and Classification Reports
+### `reduced_nodes` Confusion Matrices and Classification Reports
 
-**Train**
+**`reduced_nodes` Train**
 
 <img src="/images/reduced_nodes_train_cm_cr.png" alt="reduced_nodes training data confusion matrix and classification report" />
 
-**Test**
+**`reduced_nodes` Test**
 
 <img src="/images/reduced_nodes_test_cm_cr.png" alt="reduced_nodes test data confusion matrix and classification report" />
 
-## `dropout`
+## `dropout` 
 Add dropout to `reduced_nodes` model
 
 ### `dropout.summary()`
 
 <img src="/images/dropout_summary.png" alt="dropout.summary()" />
 
-### Loss and Accuracy across epochs
+### `dropout` Loss and Accuracy across epochs
 
 <img src="/images/dropout_la_plot.png" alt="dropout loss and accuacy across epochs plots" />
 
-### Confusion Matrices and Classification Reports
+### `dropout` Confusion Matrices and Classification Reports
 
-**Train**
+**`dropout` Train**
 
 <img src="/images/dropout_train_cm_cr.png" alt="dropout training data confusion matrix and classification report" />
 
-**Test**
+**`dropout` Test**
 
 <img src="/images/dropout_test_cm_cr.png" alt="dropout test data confusion matrix and classification report" />
 
@@ -233,16 +233,16 @@ Because the intent of this model is to flag cases of concern, I will go with the
 # Final Model
 For the above mentioned reasons I have chosen my final model to be the `reduced_nodes` model. For the `final_model` I downsampled the pneumonia class to match that of the normal class. This will bring the total number of training images to 2698 with an even split of both classes. I then selected 25 from each class for validation data. 
 
-## Architecture
+## `final_model` Architecture
 
 <img src="/images/final_model_arch.png" alt="final_model architecture" />
 
 
-## Summary
+## `final_model` Summary
 
 <img src="/images/final_model_summary.png" alt="final_model.summary()" />
 
-## Loss and Accuracy across epochs
+## `final_model` Loss and Accuracy across epochs
 
 ### Plot
 
@@ -252,17 +252,17 @@ For the above mentioned reasons I have chosen my final model to be the `reduced_
 
 ### Compare with `compare` df
 
-<img src="/images/compare_with_final.png" alt="each models accuracy and pneumonia recall scores for train and test data" />
+<img src="/images/compare_with_final_2.png" alt="each models accuracy and pneumonia recall scores for train and test data" />
 
 **NOTES:** There is still a very high accuracy with both train and test data, ~98.7% and ~91.2% respectively. Additionally, the differences between training and test, loss and accuracy are the lowest in this final model. Remember, this is the `reduce_nodes` model and the only difference is the amount of data that has been used to train the model. 
 
-## Confusion Matrices and Classification Reports
+## `final_model` Confusion Matrices and Classification Reports
 
-**Train**
+**`final_model` Train**
 
 <img src="/images/final_train_cm_cr.png" alt="final_model training data confusion matrix and classification report" />
 
-**Test**
+**`final_model` Test**
 
 <img src="/images/final_test_cm_cr.png" alt="final_model test data confusion matrix and classification report" />
 
@@ -280,17 +280,17 @@ For the above mentioned reasons I have chosen my final model to be the `reduced_
 
 # Next Steps
 
-While this model has the lowest difference between training and test, loss and accuracy there is still a slight difference. In future iteration, adjusting the lambda coefficient in the l2 regularization may further decrease these differences. An additional method may also be to reduce the kernel nodes even further. 
+While this model has the lowest difference between training and test, loss and accuracy there is still a slight difference. In future iteration, increasing the lambda coefficient in the l2 regularization may further decrease these differences. Additional methods may also be to reduce the kernel nodes even further, or decrease the dropout p value. 
 
 As we have seen, the more data available to train the model, the better it performs. One option to increase data, while maintaining equal distribution of classes, is instead of down sampling the pneumonia class to match that of the normal class, we can up sample the normal class using data augmentation to match the number of pneumonia cases. This will result in 2534 more "NORMAL" images and increase the total number of training images from 2698 to 7766. 
 
 # Recommendations
 
-My recommendation is that GE Healthcare have built into the CCS machines software the ability to not only flag cases of concern for immediate review, but also have the radiologist confirm the AI's predictions. This collaborative approach gives further opportunities for the model to learn and improve performance, and also provides a direct actionable way to improve clinical outcomes and elevate patient experience. 
+My recommendation is that GE Healthcare have built into the CCS machines software the ability to not only flag cases of concern for immediate review, but also have the radiologist either confirm or reject the models predictions. This collaborative approach gives further opportunities for the model to learn and improve performance, and also provides a direct actionable way to improve clinical outcomes and elevate patient experience. This could even potentially mean a CCS machine could learn the proclivities of the particular office or medical practice that it is located in.
 
-An additional recommendation would be to push software updates to existing machines, allowing for example, a machine in a small family practice in Idaho could get updates and improve due to the images being collected from clinics in more densely populated urban locations like San Francisco or New York. 
+An additional recommendation would be to push software updates to existing machines, providing ongoing improvements of predictions. This would be particularly useful for small rural locations who don’t have a high volume of patients. If they can get updates, and improve, due to the images being collected from clinics in more densely populated urban locations then you are giving every doctor’s office around the globe a reason to want this technology for their own practice no matter how big or small they are. 
 
-These recommendations will make these CCS units more marketable to a larger range of businesses and give every doctor’s office around the globe a reason to want this technology for their own practice. The more CCS machines learning from new cases, the better these AI predictions can get. And the better the predictions, the more justification to bring this technology into every medical practice.
+These recommendations will make these CCS units more marketable to a larger range of businesses. The more CCS machines learning from new cases, the better these AI predictions can get. And the better the predictions, the more justification to bring this technology into every medical practice.
 
 # Thank You
 
